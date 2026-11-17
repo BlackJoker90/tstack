@@ -13,8 +13,8 @@ and explore new ideas, skip fixes to code being replaced.
 Bring in three delegates to help with the user's request, usually for review
 or feedback:
 
-- Codex GPT-6.1 Sol (`gpt-6.1-sol`, `reasoningEffort: xhigh`)
-- Claude Fable 5.1 (`claude-fable-5-1`, `effort: xhigh`)
+- Codex GPT-6.2 Astra (`gpt-6.2-astra`, `reasoningEffort: xhigh`)
+- Claude Fable 5.2 (`claude-fable-5-2`, `effort: xhigh`)
 - Claude Opus 5.5 (`claude-opus-5-5`, `effort: xhigh`)
 
 In T3 Code, use `orchestrator_capabilities` to resolve the models, then
@@ -46,7 +46,7 @@ Rounds: 2
 
 | Delegate | Round 1 | Round 2 |
 | --- | --- | --- |
-| GPT Sol | 8/10 | 10/10 |
+| GPT Astra | 8/10 | 10/10 |
 | Claude Fable | 7/10 | 9/10 |
 | Claude Opus | 7/10 | 9/10 |
 ```
