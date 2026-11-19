@@ -10,17 +10,22 @@ relevant checks. Give council the updated implementation; do not defer known
 fixes until reviews return. If the user wants to discard the implementation
 and explore new ideas, skip fixes to code being replaced.
 
-Bring in three delegates to help with the user's request, usually for review
+Bring in four delegates to help with the user's request, usually for review
 or feedback:
 
 - Codex GPT-6.2 Astra (`gpt-6.2-astra`, `reasoningEffort: xhigh`)
 - Claude Fable 5.2 (`claude-fable-5-2`, `effort: xhigh`)
 - Claude Opus 5.5 (`claude-opus-5-5`, `effort: xhigh`)
+- Antigravity Gemini 4 Neon (`gemini-4-neon`, `thought_level: xhigh`)
 
 In T3 Code, use `orchestrator_capabilities` to resolve the models, then
 `delegate_task` to start one delegate per model in parallel. Elsewhere, use
 the harness's subagent tools. If a required model or delegation tool is
 unavailable, report it instead of substituting.
+
+If the Gemini Neon run fails with a provider error (for example
+`NOT_FOUND (code 404)`), start it again once with the same request. If the
+retry also fails, report the failure and record `no score` for that round.
 
 Give each delegate the request and relevant context. For review or feedback,
 keep their work read-only. Collect their responses and summarize the useful
@@ -49,6 +54,7 @@ Rounds: 2
 | GPT Astra | 8/10 | 10/10 |
 | Claude Fable | 7/10 | 9/10 |
 | Claude Opus | 7/10 | 9/10 |
+| Gemini Neon | 8/10 | 9/10 |
 ```
 
 If a delegate gives no score, write `no score`. Do not invent one.
